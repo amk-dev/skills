@@ -2,7 +2,7 @@
 
 [![Skills](https://www.skills.sh/badge/amk-dev/skills)](https://www.skills.sh/skills/amk-dev/skills)
 
-A collection of [Claude Code](https://code.claude.com) skills by [@amk-dev](https://github.com/amk-dev).
+A collection of [Claude Code](https://code.claude.com) skills by [@buriedstupidity](https://x.com/buriedstupidity).
 
 ## Install
 
