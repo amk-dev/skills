@@ -23,16 +23,21 @@ Search through the user's Claude Code conversation history to find sessions matc
    - Each `.jsonl` file in that directory is a session — the filename (without `.jsonl`) is the session ID
    - Read the first few lines of recent session files to find which one contains messages around that timestamp
 
-4. **Output results** in this format for each match:
+4. **Output results** in this format for each match. The resume command must `cd` into the session's project directory first, because `claude --resume` only works from that directory:
    ```
    ---
    Prompt: <the matching prompt text>
    Project: <project path>
    Session ID: <session-id>
    Timestamp: <human readable date>
-   Resume command: claude --resume <session-id>
+   Resume command: cd "<project path>" && claude --resume <session-id>
    ```
 
 5. **Limit to 10 most relevant matches**, sorted by relevance to the query, then by recency.
+
+6. **Surface the most likely match first** and present its ready-to-run command on its own so the user can copy it directly:
+   ```
+   cd "<project path>" && claude --resume <session-id>
+   ```
 
 If no matches are found, say so and suggest alternative search terms.
