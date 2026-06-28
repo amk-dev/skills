@@ -40,4 +40,11 @@ Search through the user's Claude Code conversation history to find sessions matc
    cd "<project path>" && claude --resume <session-id>
    ```
 
+7. **Automatically copy that top command to the clipboard** using the OS-appropriate tool, and tell the user it's been copied:
+   - macOS: `printf '%s' 'cd "<project path>" && claude --resume <session-id>' | pbcopy`
+   - Linux (Wayland): `... | wl-copy` — or X11: `... | xclip -selection clipboard`
+   - Windows: `... | clip`
+
+   Use the command for the current platform. If no clipboard tool is available, skip this step and just show the command.
+
 If no matches are found, say so and suggest alternative search terms.
